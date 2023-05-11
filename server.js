@@ -7,7 +7,13 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-const API_KEY = process.env.OPENAI_API_KEY,
+const API_KEY = process.env.OPENAI_API_KEY
+
+app.get('/', async (req, res) => {
+  res.status(200).send({
+    message: 'Hello from ania-chatbot-api',
+  })
+})
 
 app.post('/', async (req, res) => {
   const prompt = req.body.prompt

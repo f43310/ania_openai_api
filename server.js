@@ -67,7 +67,7 @@ app.post('/', async (req, res) => {
   //   console.error(error)
   //   res.status(500).send(error || 'Something went wrong')
   // }
-
+  const prompt = req.body.prompt
   try {
     const data = await sendOpenAIRequest('chat/completions', {
       model: 'gpt-3.5-turbo',

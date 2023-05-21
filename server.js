@@ -9,7 +9,7 @@ app.use(express.json())
 app.use(cors())
 
 // const API_KEY = process.env.OPENAI_API_KEY
-const API_KEYS = JSON.parse(process.env.OPENAI_API_KEYS)
+const API_KEYS = process.env.OPENAI_API_KEYS.split(',')
 let currentKeyIndex = 0
 
 app.get('/', async (req, res) => {
